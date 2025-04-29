@@ -1,0 +1,258 @@
+@keyframes po {
+    0%, 21%, 79%, to {
+        opacity: 0;
+    }
+    29%, 71% {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'Akkurat-bold';
+    src: url('/public/font/AkkuratStd-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Akkurat-regular';
+    src: url('/public/font/AkkuratStd-Regular.ttf') format('truetype');
+}
+
+:root {
+    --o6: cubic-bezier(.16, 1, .3, 1);
+    --o5: cubic-bezier(.22, 1, .36, 1);
+    --bg: #1a1a1a;
+    --copy: #fff;
+}
+
+body, html {
+    overscroll-behavior: none;
+}
+
+body {
+    touch-action: none;
+    font-size: .625vw;
+    line-height: .7292vw;
+    letter-spacing: .01em;
+    background-color: rgb(25, 25, 25);
+    margin: 0;
+    padding: 0;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: #000;
+    text-shadow: none;
+}
+
+::selection {
+    color: #fff;
+    background: #000;
+    text-shadow: none;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/3.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+/* ---------------------------------------         Commun ------------------------------------------------------------------------- */
+#navbar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: auto;
+}
+
+/* -------------------------------------------------------    Page d'acceuille ----------------------------------------------------------------*/
+.home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.home h1 {  
+    width: 100%;
+    position: absolute;
+    top: 23vh; 
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-family: 'Akkurat-bold', sans-serif;
+    text-transform: uppercase;
+    color: var(--copy);
+    font-size: 20vw;
+    font-weight: 800;
+    letter-spacing: 0rem;
+    line-height: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.home h1 .char {
+    position: relative;
+    will-change: transform;
+}
+
+#logo {
+    display: flex;
+    margin-top: 1.15vw;
+    margin-left: 1.15vw;
+    width: 4vw;
+    height: 2vw;
+    pointer-events: auto;
+}
+
+#menu-open {
+    position: absolute;
+    top: .5729vw;
+    right: .625vw;
+    padding: .5208vw;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav .menu-text {
+    font-family: 'Akkurat-regular', sans-serif;
+}
+
+#main-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.page-content {
+    position: relative;
+    height: 100%;
+    will-change: transform;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba(0, 0, 0, .8);
+    will-change: opacity;
+    pointer-events: none;
+}
+
+#home-media {
+    position: absolute;
+    top: calc(53vh + 6.5vw);
+    left: 12vw;
+    right: 12vw;
+    font-size: .7292vw;
+    display: flex;
+}
+
+
+#home-media .text-line-container {
+    margin-top: -.2083vw;
+}
+
+#home-media .text-line-container:first-child {
+    margin-top: 0;
+}
+
+#home-media .text-line {
+    padding-top: .1042vw;
+    padding-bottom: .1042vw;
+}
+
+#media-play-container {
+    width: 62vw;
+}
+
+#media-play {
+    display: table;
+}
+
+#play-icon-container {
+    float: left;
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+}
+
+#play-icon {
+    fill: #fff;
+    opacity: 1;
+}
+
+#play-text-container {
+    float: left;
+    margin-top: .2604vw;
+    margin-left: .4688vw;
+    pointer-events: none;
+}
+
+#creator-curator-section {
+    width: 8.2292vw;
+}
+
+#creator-curator-section, #locations-section {
+    margin-top: .2604vw;
+}
+
+#create-curator{
+    display: flex;
+}
+
+.text-line {
+    color: white;
+    font-family: 'Akkurat-regular', sans-serif;
+}
+
+
+
+
+::view-transition-old(root),
+::view-transition-new(root){
+    animation: none !important;
+}
+
+::view-transition-group(root) {
+    z-index: auto !important;
+}
+
+::view-transition-image-pair(root){
+    isolation: isolate;
+    will-change: transform, opacity, clip-path;
+    z-index: 1;
+}
+
+::view-transition-new(root){
+    z-index: 10000;
+    animation: none !important;
+}
+
+::view-transition-old(root){
+    z-index: 1;
+    animation: none o !important;
+}
